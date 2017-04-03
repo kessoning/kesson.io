@@ -1,0 +1,102 @@
+<html>
+
+<head>
+
+  <title> Kesson - Artist and Code Bender </title>
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.0.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.3/dat.gui.min.js" type="text/javascript"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.min.js" type="text/javascript"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/addons/p5.dom.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/addons/p5.sound.min.js" type="text/javascript"></script>
+
+    <script>
+        function getRandomUrl(urls) {
+            var minIndex = 0;
+            var maxIndex = urls.length - 0.5;
+            var randomIndex = Math.floor(Math.random() * (maxIndex - minIndex)) + minIndex;
+            return urls[randomIndex];
+        }
+        var urls = [];
+
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            urls = [
+                "geomagics.js",
+                "hypotrochoid.js",
+                //"mandalaGenerator.js",
+                "randomPatternGenerator.js",
+                "rhodonea.js",
+                "rorschachGenerator.js",
+                "vortex.js"
+            ];
+        } else {
+            urls = [
+                //"chaos.js",
+                "geomagics.js",
+                "hypotrochoid.js",
+                //"mandalaGenerator.js",
+                "mathemagics.js",
+                "polar.js",
+                "randomPatternGenerator.js",
+                "randomTestPattern.js",
+                "rhodonea.js",
+                "rorschachGenerator.js",
+                "untilOctagon.js",
+                "vortex.js"
+            ];
+        }
+
+        var randomSelectedUrl = getRandomUrl(urls);
+        createRandomScript();
+        //phoneCheck();
+
+        function createRandomScript() {
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.id = 'mainscript'
+            script.src = randomSelectedUrl;
+            head.appendChild(script);
+
+            //href="http://www.kessondalef.com/";
+            //console.log(document.getElementById('sketchurl'));
+        }
+
+        function changeLink() {
+            var link = document.getElementById('sketchurl');
+
+            console.log("link changed");
+
+            window.open(
+                link.href,
+                '_blank'
+            );
+
+            link.innerHTML = "" + randomSelectedUrl;
+            link.setAttribute('href', 'http://www.kessondalef.com');
+
+            //return false;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="kessonlink">
+        <p id="kessond"><a href="http://www.kessondalef.com" target="_blank" id="infolink">kessondalef.com</a></p>
+    </div>
+    <div class="sourcelink">
+        <p id="sourced"><a href="http://www.kessondalef.com" target="_blank" id="saucelink">.source</a></p>
+    </div>
+    <div class="shufflelink">
+        <span id="kessond" onmouseover="this.style.cursor='pointer'" onmouseout="this.style.cursor='default'" onclick="window.location.reload();">
+          <img src="assets/shuffle.png" id="shuffleimg"></img>
+        </span>
+</body>
+
+</html>

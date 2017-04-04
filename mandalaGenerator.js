@@ -263,5 +263,6 @@ function fadeTitle() {
         titleOpacity -= 0.025;
     }
     sketchname.style('opacity', '' + titleOpacity);
+    sketchdescription.style('opacity', '' + titleOpacity);
     if (titleOpacity < 0.025) sketchname.hide();
 }

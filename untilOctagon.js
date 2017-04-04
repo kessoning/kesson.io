@@ -87,7 +87,7 @@ function createTitle() {
         sketchname.style('font-family', 'sourceCode-extralight');
         sketchname.style('font-size', '3em');
         sketchname.id('thisurl');
-        sketchname.style('color', '#f54949');
+        sketchname.style('color', '#199393');
         sketchname.style('position', 'absolute');
         sketchname.style('text-decoration', 'underline');
         sketchname.style('margin-right', '-50%');
@@ -103,7 +103,7 @@ function createTitle() {
         sketchdescription.style('font-family', 'sourceCode-extralight');
         sketchdescription.style('font-size', '1.5em');
         sketchdescription.id('thisurl');
-        sketchdescription.style('color', '#ffffff');
+        sketchdescription.style('color', '#555555');
         sketchdescription.style('position', 'absolute');
         sketchdescription.style('margin-right', '-50%');
         sketchdescription.style('top', '87.5%');
@@ -118,7 +118,7 @@ function createTitle() {
         sketchname.style('font-family', 'sourceCode-extralight');
         sketchname.style('font-size', '1.5em');
         sketchname.id('thisurl');
-        sketchname.style('color', '#f54949');
+        sketchname.style('color', '#199393');
         sketchname.style('position', 'absolute');
         sketchname.style('text-decoration', 'underline');
         sketchname.style('margin-right', '-50%');
@@ -134,7 +134,7 @@ function createTitle() {
         sketchdescription.style('font-family', 'sourceCode-extralight');
         sketchdescription.style('font-size', '0.8em');
         sketchdescription.id('thisurl');
-        sketchdescription.style('color', '#ffffff');
+        sketchdescription.style('color', '#555555');
         sketchdescription.style('position', 'absolute');
         sketchdescription.style('margin-right', '-50%');
         sketchdescription.style('top', '87.5%');
@@ -149,6 +149,7 @@ function fadeTitle() {
         titleOpacity -= 0.025;
     }
     sketchname.style('opacity', '' + titleOpacity);
+    sketchdescription.style('opacity', '' + titleOpacity);
     if (titleOpacity < 0.025) {
         sketchname.hide();
         sketchdescription.hide();

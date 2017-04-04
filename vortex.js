@@ -35,6 +35,8 @@ function setup() {
 
     createCanvas(windowWidth, windowHeight);
 
+    createTitle();
+
     for (var i = 0; i < numsquares; i++) {
         points.push(map(i, 0, numsquares, 0, PI / 2));
         hexagons.push(new Hexagon(map(i, 0, i + 1, height * 2, 0)));
@@ -42,6 +44,8 @@ function setup() {
 }
 
 function draw() {
+    fadeTitle();
+
     background(255);
 
     noStroke();
@@ -90,7 +94,7 @@ function createTitle() {
         sketchname.style('font-family', 'sourceCode-extralight');
         sketchname.style('font-size', '3em');
         sketchname.id('thisurl');
-        sketchname.style('color', '#f54949');
+        sketchname.style('color', '#199393');
         sketchname.style('position', 'absolute');
         sketchname.style('text-decoration', 'underline');
         sketchname.style('margin-right', '-50%');
@@ -109,7 +113,7 @@ function createTitle() {
         sketchname.style('font-family', 'sourceCode-extralight');
         sketchname.style('font-size', '1.5em');
         sketchname.id('thisurl');
-        sketchname.style('color', '#f54949');
+        sketchname.style('color', '#199393');
         sketchname.style('position', 'absolute');
         sketchname.style('text-decoration', 'underline');
         sketchname.style('margin-right', '-50%');

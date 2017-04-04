@@ -28,13 +28,13 @@ function setup() {
     }
 
     var info = document.getElementById("infolink");
-    info.style.color="#555555";
+    info.style.color = "#555555";
 
     var info = document.getElementById("saucelink");
-    info.style.color="#555555";
+    info.style.color = "#555555";
 
     var shuffle = document.getElementById("shuffleimg");
-    shuffle.src="assets/shuffle_grey.png";
+    shuffle.src = "assets/shuffle_grey.png";
 
     if (isMobile) {
         pixelDensity(1);
@@ -63,8 +63,8 @@ function setup() {
 }
 
 function draw() {
-  // fade the title
-  fadeTitle();
+    // fade the title
+    fadeTitle();
 
     for (var i = 0; i < speed; i++) {
         if (random(1) > 0.5) {
@@ -116,41 +116,76 @@ var sketchdescription;
 var titleOpacity = 1;
 
 function createTitle() {
-  sketchname = createA("https://www.openprocessing.org/sketch/417181");
-  sketchname.style('font-family', 'sourceCode-extralight');
-  sketchname.style('font-size', '1.5em');
-  sketchname.id('thisurl');
-  sketchname.style('color', '#199393');
-  sketchname.style('position', 'absolute');
-  sketchname.style('text-decoration', 'underline');
-  sketchname.style('margin-right', '-50%');
-  sketchname.style('top', '85%');
-  sketchname.style('left', '50%');
-  sketchname.style('text-align', 'center');
-  sketchname.style('transform', 'translate(-50%, -50%)');
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        sketchname = createA("https://www.openprocessing.org/sketch/417181");
+        sketchname.style('font-family', 'sourceCode-extralight');
+        sketchname.style('font-size', '3em');
+        sketchname.id('thisurl');
+        sketchname.style('color', '#f54949');
+        sketchname.style('position', 'absolute');
+        sketchname.style('text-decoration', 'underline');
+        sketchname.style('margin-right', '-50%');
+        sketchname.style('top', '85%');
+        sketchname.style('left', '50%');
+        sketchname.style('text-align', 'center');
+        sketchname.style('transform', 'translate(-50%, -50%)');
 
-  document.getElementById('thisurl').innerHTML = "Random.pattern";
-  document.getElementById('thisurl').setAttribute('target', '_blank');
+        document.getElementById('thisurl').innerHTML = "Random.pattern";
+        document.getElementById('thisurl').setAttribute('target', '_blank');
 
-  sketchdescription = createP("[ simple pattern generator ]");
-  sketchdescription.style('font-family', 'sourceCode-extralight');
-  sketchdescription.style('font-size', '0.8em');
-  sketchdescription.id('thisurl');
-  sketchdescription.style('color', '#000000');
-  sketchdescription.style('position', 'absolute');
-  sketchdescription.style('margin-right', '-50%');
-  sketchdescription.style('top', '87.5%');
-  sketchdescription.style('left', '50%');
-  sketchdescription.style('text-align', 'center');
-  sketchdescription.style('transform', 'translate(-50%, -50%)');
+        sketchdescription = createP("[ simple pattern generator ]");
+        sketchdescription.style('font-family', 'sourceCode-extralight');
+        sketchdescription.style('font-size', '1.5em');
+        sketchdescription.id('thisurl');
+        sketchdescription.style('color', '#ffffff');
+        sketchdescription.style('position', 'absolute');
+        sketchdescription.style('margin-right', '-50%');
+        sketchdescription.style('top', '87.5%');
+        sketchdescription.style('left', '50%');
+        sketchdescription.style('text-align', 'center');
+        sketchdescription.style('transform', 'translate(-50%, -50%)');
+
+        document.getElementById('sourced').style.fontSize = "2em";
+        document.getElementById('kessond').style.fontSize = "2em";
+    } else {
+        sketchname = createA("https://www.openprocessing.org/sketch/417181");
+        sketchname.style('font-family', 'sourceCode-extralight');
+        sketchname.style('font-size', '1.5em');
+        sketchname.id('thisurl');
+        sketchname.style('color', '#f54949');
+        sketchname.style('position', 'absolute');
+        sketchname.style('text-decoration', 'underline');
+        sketchname.style('margin-right', '-50%');
+        sketchname.style('top', '85%');
+        sketchname.style('left', '50%');
+        sketchname.style('text-align', 'center');
+        sketchname.style('transform', 'translate(-50%, -50%)');
+
+        document.getElementById('thisurl').innerHTML = "Random.pattern";
+        document.getElementById('thisurl').setAttribute('target', '_blank');
+
+        sketchdescription = createP("[ simple pattern generator ]");
+        sketchdescription.style('font-family', 'sourceCode-extralight');
+        sketchdescription.style('font-size', '0.8em');
+        sketchdescription.id('thisurl');
+        sketchdescription.style('color', '#ffffff');
+        sketchdescription.style('position', 'absolute');
+        sketchdescription.style('margin-right', '-50%');
+        sketchdescription.style('top', '87.5%');
+        sketchdescription.style('left', '50%');
+        sketchdescription.style('text-align', 'center');
+        sketchdescription.style('transform', 'translate(-50%, -50%)');
+    }
 }
 
 function fadeTitle() {
-  if (millis() > 5000 && titleOpacity > 0) { titleOpacity -= 0.025;}
-  sketchname.style('opacity', '' + titleOpacity);
-  sketchdescription.style('opacity', '' + titleOpacity);
-  if (titleOpacity < 0.025) {
-    sketchname.hide();
-    sketchdescription.hide();
-  }
+    if (millis() > 5000 && titleOpacity > 0) {
+        titleOpacity -= 0.025;
+    }
+    sketchname.style('opacity', '' + titleOpacity);
+    sketchdescription.style('opacity', '' + titleOpacity);
+    if (titleOpacity < 0.025) {
+        sketchname.hide();
+        sketchdescription.hide();
+    }
 }

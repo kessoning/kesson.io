@@ -63,21 +63,42 @@ var sketchdescription;
 var titleOpacity = 1;
 
 function createTitle() {
-  sketchname = createA("https://www.openprocessing.org/sketch/385996");
-  sketchname.style('font-family', 'sourceCode-extralight');
-  sketchname.style('font-size', '1.5em');
-  sketchname.id('thisurl');
-  sketchname.style('color', '#f54949');
-  sketchname.style('position', 'absolute');
-  sketchname.style('text-decoration', 'underline');
-  sketchname.style('margin-right', '-50%');
-  sketchname.style('top', '85%');
-  sketchname.style('left', '50%');
-  sketchname.style('text-align', 'center');
-  sketchname.style('transform', 'translate(-50%, -50%)');
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      sketchname = createA("https://www.openprocessing.org/sketch/385996");
+      sketchname.style('font-family', 'sourceCode-extralight');
+      sketchname.style('font-size', '3em');
+      sketchname.id('thisurl');
+      sketchname.style('color', '#f54949');
+      sketchname.style('position', 'absolute');
+      sketchname.style('text-decoration', 'underline');
+      sketchname.style('margin-right', '-50%');
+      sketchname.style('top', '85%');
+      sketchname.style('left', '50%');
+      sketchname.style('text-align', 'center');
+      sketchname.style('transform', 'translate(-50%, -50%)');
 
-  document.getElementById('thisurl').innerHTML = "mathemagics";
-  document.getElementById('thisurl').setAttribute('target', '_blank');
+      document.getElementById('thisurl').innerHTML = "mathemagics";
+      document.getElementById('thisurl').setAttribute('target', '_blank');
+
+      document.getElementById('sourced').style.fontSize = "2em";
+      document.getElementById('kessond').style.fontSize = "2em";
+  } else {
+      sketchname = createA("https://www.openprocessing.org/sketch/385996");
+      sketchname.style('font-family', 'sourceCode-extralight');
+      sketchname.style('font-size', '1.5em');
+      sketchname.id('thisurl');
+      sketchname.style('color', '#f54949');
+      sketchname.style('position', 'absolute');
+      sketchname.style('text-decoration', 'underline');
+      sketchname.style('margin-right', '-50%');
+      sketchname.style('top', '85%');
+      sketchname.style('left', '50%');
+      sketchname.style('text-align', 'center');
+      sketchname.style('transform', 'translate(-50%, -50%)');
+
+      document.getElementById('thisurl').innerHTML = "mathemagics";
+      document.getElementById('thisurl').setAttribute('target', '_blank');
+  }
 }
 
 function fadeTitle() {

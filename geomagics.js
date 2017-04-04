@@ -114,7 +114,7 @@ var titleOpacity = 1;
 
 function createTitle() {
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    sketchname = createA("http://www.kesson.io/geomagics.html");
+    sketchname = createA("https://www.openprocessing.org/sketch/386759");
     sketchname.style('font-family', 'sourceCode-extralight');
     sketchname.style('font-size', '3em');
     sketchname.id('thisurl');

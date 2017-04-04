@@ -23,6 +23,8 @@ var isMobile;
 function setup() {
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         isMobile = true;
+        var shfl = select('#shuffleimg');
+        shfl.hide();
     } else {
         isMobile = false;
     }

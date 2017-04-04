@@ -27,9 +27,11 @@ function windowResized() {
 }
 
 function setup() {
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        pixelDensity(1);
-    }
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      pixelDensity(1);
+      var shfl = select('#shuffleimg');
+      shfl.hide();
+  }
 
     var info = document.getElementById("infolink");
     info.style.color = "#555555";

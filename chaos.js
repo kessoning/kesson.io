@@ -28,6 +28,8 @@ function windowResized() {
 function setup() {
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         pixelDensity(1);
+        var shfl = select('#shuffleimg');
+        shfl.hide();
     }
 
     createCanvas(windowWidth, windowHeight);

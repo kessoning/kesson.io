@@ -16,27 +16,27 @@
     <meta property="og:site_name" content="Artist and Code Bender" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Kesson's website" />
-    <meta property="og:image" content="https://kesson.io/assets/preview.png" />
+    <meta property="og:image" content="https://kesson.io/assets/64bitpreview.png" />
 
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" sizes="57x57" href="../assets/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../assets/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../assets/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../assets/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../assets/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../assets/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="manifest" href="../manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="../ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
     <script src="https://code.jquery.com/jquery-3.2.0.js"></script>
@@ -70,59 +70,14 @@
             });
         }
 
-        function getRandomUrl(urls) {
-            var minIndex = 0;
-            var maxIndex = urls.length - 0.5;
-            var randomIndex = Math.floor(Math.random() * (maxIndex - minIndex)) + minIndex;
-            return urls[randomIndex];
-        }
-        var urls = [];
-
-        if (isMobile) {
-            urls = [
-                "sketches/geomagics.js",
-                "sketches/hypotrochoid.js",
-                "sketches/mandalaGenerator.js",
-                "sketches/mathemagics.js",
-                "sketches/randomTextureGenerator.js",
-                "sketches/rhodonea.js",
-                "sketches/rorschachGenerator.js",
-                "sketches/vortex.js",
-                "sketches/sketch_170222.js",
-                "sketches/sketch_170501.js",
-                "sketches/64bitblackdata.js"
-            ];
-        } else {
-            urls = [
-                "sketches/geomagics.js",
-                "sketches/hypotrochoid.js",
-                "sketches/mandalaGenerator.js",
-                "sketches/mathemagics.js",
-                "sketches/polar.js",
-                "sketches/randomTextureGenerator.js",
-                "sketches/randomTestPattern.js",
-                "sketches/rhodonea.js",
-                "sketches/rorschachGenerator.js",
-                "sketches/untilOctagon.js",
-                "sketches/vortex.js",
-                "sketches/sketch_170222.js",
-                "sketches/sketch_170501.js",
-                "sketches/audio_reactive.js",
-                "sketches/g.draw.js",
-                "sketches/64bitblackdata.js"
-            ];
-        }
-
-        var randomSelectedUrl = getRandomUrl(urls);
         createRandomScript();
-        //phoneCheck();
 
         function createRandomScript() {
             var head = document.getElementsByTagName('head')[0];
             var script = document.createElement('script');
             script.type = 'text/javascript';
             script.id = 'mainscript'
-            script.src = randomSelectedUrl;
+            script.src = "64bitblackdata.js";
             head.appendChild(script);
         }
 
@@ -151,7 +106,7 @@
     </div>
     <div class="shufflelink">
         <span id="kessond" onmouseover="this.style.cursor='pointer'" onmouseout="this.style.cursor='default'" onclick="window.location.reload();">
-          <img src="assets/shuffle.png" id="shuffleimg"></img>
+          <img src="../assets/shuffle.png" id="shuffleimg"></img>
         </span>
       </div>
 </body>
